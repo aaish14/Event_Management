@@ -1,13 +1,12 @@
 :root {
-    --bg: #0d0c0a;              /* deep luxury black-brown */
-    --cream: #1a1612;
-    --card-bg: rgba(255, 255, 255, 0.08);
-    --heading: #f3ede4;         /* soft cream heading */
-    --text: #ffffff;            /* white text */
-    --gold: #afaf60;            /* your original gold */
+    --bg: #f8f4ee;
+    --cream: #f3ede4;
+    --gold: #afaf60;
     --gold-light: #d8c39d;
+    --heading: #afaf60;
+    --text: #ffffff;
     --white: #ffffff;
-    --border: rgba(175, 175, 96, 0.2);
+    
 }
 
 * {
@@ -65,11 +64,9 @@ body::before{
 .event-card,
 .package-card,
 .testimonial{
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+    background:rgba(255,255,255,0.12);
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
-    color: var(--text);
 }
 
 .services,
@@ -115,57 +112,90 @@ h4 {
 
 /* NAVBAR */
 
-.navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:999;
-
-    background:rgba(255, 255, 255, 0.15);
-    backdrop-filter:blur(12px);
-
-    transition:all .4s ease;
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all .4s ease;
+    padding: 15px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar ul li a{
-    color:rgb(255, 255, 255);
-}
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar .nav-link {
+    color: rgb(255, 255, 255) !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    padding: 8px 15px !important;
+    transition: 0.3s ease;
 }
 
-.logo {
-    font-size: 2rem;
+.navbar .nav-link:hover,
+.navbar .nav-item.active .nav-link {
+    color: var(--gold) !important;
+}
+
+/* Custom hamburger toggler */
+.navbar-toggler {
+    border-color: rgba(175, 175, 96, 0.5) !important;
+    padding: 4px 8px !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(175, 175, 96, 0.25) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28175, 175, 96, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: 1px solid var(--gold);
     color: var(--gold);
-    letter-spacing: 4px;
-}
-
-.navbar ul {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.navbar li {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
     cursor: pointer;
-    color: var(--heading);
-    transition: .3s;
-    /* backdrop-filter: blur(10px); */
-    
+    transition: 0.3s;
 }
 
-.navbar li:hover {
-    color: white;
-    border: 1px ;
-        border-radius: 50px;
+#theme-toggle:hover {
+    background: var(--gold);
+    color: #fff;
 }
-.navbar.scrolled{
-    background:rgba(10,10,10,0.85);
-    backdrop-filter:blur(20px);
 
-    border-bottom:1px solid rgba(212,175,55,0.2);
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(18, 16, 14, 0.96) !important;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+        border: 1px solid rgba(175, 175, 96, 0.2);
+    }
+    .navbar .nav-link {
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .navbar .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.85) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 /* HERO */
@@ -353,11 +383,10 @@ background-image: url("https://images.unsplash.com/photo-1651313948618-31644c7fe
     margin-bottom: 15px;
 }
 .event-card p {
-    color: var(--text);
-    opacity: 0.85;
+    color:#090807
 }
 .event-card p:hover{
-    color: var(--gold-light);
+    color: #65321c;
 }
 /* Event Details */
 .event-details {
@@ -904,139 +933,107 @@ html {
 /* Theme Toggle Button */
 
 /* =========================
-   LUXURY LIGHT THEME (NEW)
-   Matches off-white background with high-contrast text
+   LUXURY DARK THEME (FIXED)
+   Matches your gold + cream palette
 ========================= */
 
-.light-theme {
-    --bg: #f8f4ee;              /* premium off-white background */
-    --cream: #f3ede4;
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --heading: #4a4a35;         /* darker gold/olive for better readability on light bg */
-    --text: #1c1a17;            /* dark charcoal text */
-    --gold: #7a7a40;            /* darker gold */
-    --gold-light: #9c8e70;
-    --white: #000000;
-    --border: rgba(122, 122, 64, 0.2);
+.dark-theme {
+    --bg: #0f0d0b;              /* deep luxury black-brown */
+    --cream: #1a1612;
+    --card-bg: rgba(255, 255, 255, 0.06);
+
+    --heading: #f3ede4;         /* soft cream heading */
+    --text: rgba(255, 255, 255, 0.85);
+
+    --gold: #afaf60;            /* your original gold */
+    --gold-light: #d8c39d;
+    --white: #ffffff;
 }
 
 /* Apply base background */
-.light-theme body {
-    background: var(--bg) !important;
-    color: var(--text) !important;
-}
-
-.light-theme body::before {
-    background: transparent !important;
+.dark-theme body {
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 /* NAVBAR */
-.light-theme .navbar {
-    background: rgba(248, 244, 238, 0.9) !important;
+.dark-theme .navbar {
+    background: rgba(10, 9, 7, 0.75);
     backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(122, 122, 64, 0.15);
+    border-bottom: 1px solid rgba(175, 175, 96, 0.2);
 }
 
-.light-theme .navbar ul li a {
-    color: var(--text) !important;
+.dark-theme .navbar ul li a {
+    color: var(--text);
 }
 
-.light-theme .navbar ul li a:hover {
-    color: var(--gold) !important;
-}
-
-.light-theme .navbar .logo span {
-    color: var(--gold) !important;
+.dark-theme .navbar ul li a:hover {
+    color: var(--gold);
 }
 
 /* HEADINGS */
-.light-theme h1,
-.light-theme h2,
-.light-theme h3,
-.light-theme h4,
-.light-theme .logo {
-    color: var(--heading) !important;
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme .logo {
+    color: var(--heading);
 }
 
 /* CARDS */
-.light-theme .card,
-.light-theme .event-card,
-.light-theme .package-card,
-.light-theme .testimonial {
-    background: var(--card-bg) !important;
-    border: 1px solid var(--border) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
+.dark-theme .card,
+.dark-theme .event-card,
+.dark-theme .package-card,
+.dark-theme .testimonial {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-.light-theme .event-card p {
-    color: var(--text) !important;
-}
-
-.light-theme .event-card p:hover {
-    color: var(--gold) !important;
+    border: 1px solid rgba(175, 175, 96, 0.18);
 }
 
 /* BUTTONS */
-.light-theme button {
-    border: 1px solid var(--gold) !important;
-    color: var(--gold) !important;
+.dark-theme button {
+    border: 1px solid var(--gold);
+    color: var(--gold);
 }
 
-.light-theme button:hover {
-    background: var(--gold) !important;
-    color: #ffffff !important;
+.dark-theme button:hover {
+    background: var(--gold);
+    color: #0f0d0b;
 }
 
 /* HERO TEXT */
-.light-theme .hero-text h1 {
-    color: var(--gold) !important;
+.dark-theme .hero-text h1 {
+    color: var(--gold);
 }
 
-.light-theme .hero-text p {
-    color: var(--text) !important;
+.dark-theme .hero-text p {
+    color: rgba(243, 237, 228, 0.85);
 }
 
 /* FEATURES BOX */
-.light-theme .features div {
-    background: #ffffff !important;
-    color: var(--gold) !important;
-    border: 1px solid rgba(122, 122, 64, 0.25) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.light-theme .detail-text p {
-    color: var(--text) !important;
-}
-
-.light-theme .detail-text span {
-    color: var(--gold) !important;
+.dark-theme .features div {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--gold-light);
+    border: 1px solid rgba(175, 175, 96, 0.15);
 }
 
 /* CONTACT SECTION */
-.light-theme .contact {
-    background: var(--cream) !important;
-}
-
-.light-theme .contact-form input,
-.light-theme .contact-form textarea {
-    color: var(--text) !important;
-    border-bottom-color: var(--gold) !important;
-}
-
-.light-theme .contact-form input::placeholder,
-.light-theme .contact-form textarea::placeholder {
-    color: #888888 !important;
+.dark-theme .contact {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.85), rgba(10, 9, 7, 0.9)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
 }
 
 /* FOOTER */
-.light-theme footer {
-    background: var(--cream) !important;
-    border-top: 1px solid rgba(122, 122, 64, 0.15) !important;
-}
-
-.light-theme footer h3,
-.light-theme footer p {
-    color: var(--text) !important;
+.dark-theme footer {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.9), rgba(10, 9, 7, 0.95)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
 }
 
 /* SMOOTH TRANSITION */
@@ -1047,11 +1044,7 @@ body,
 .package-card,
 .testimonial,
 button,
-h1, h2, h3, h4, p,
-.detail-card,
-.detail-card-image,
-.detail-card-btn,
-.features div {
+h1, h2, h3, h4, p {
     transition: all 0.4s ease;
 }
 
@@ -1326,7 +1319,129 @@ h1, h2, h3, h4, p,
     }
 }
 
-/* Duplicate theme block removed - Consolidated in light-theme overrides */
+/* ============================================================================================================================== */
+
+/* =========================
+   LUXURY DARK THEME (FIXED)
+   Matches your gold + cream palette
+========================= */
+
+.dark-theme {
+    --bg: #0f0d0b;              /* deep luxury black-brown */
+    --cream: #1a1612;
+    --card-bg: rgba(255, 255, 255, 0.06);
+
+    --heading: #f3ede4;         /* soft cream heading */
+    --text: rgba(255, 255, 255, 0.85);
+
+    --gold: #afaf60;            /* your original gold */
+    --gold-light: #d8c39d;
+    --white: #ffffff;
+}
+
+/* Apply base background */
+.dark-theme body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+.dark-theme .navbar {
+    background: rgba(10, 9, 7, 0.75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(175, 175, 96, 0.2);
+}
+
+.dark-theme .navbar ul li a {
+    color: var(--text);
+}
+
+.dark-theme .navbar ul li a:hover {
+    color: var(--gold);
+}
+
+/* HEADINGS */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme .logo {
+    color: var(--heading);
+}
+
+/* CARDS */
+.dark-theme .card,
+.dark-theme .event-card,
+.dark-theme .package-card,
+.dark-theme .testimonial {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(175, 175, 96, 0.18);
+}
+
+/* BUTTONS */
+.dark-theme button {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.dark-theme button:hover {
+    background: var(--gold);
+    color: #0f0d0b;
+}
+
+/* HERO TEXT */
+.dark-theme .hero-text h1 {
+    color: var(--gold);
+}
+
+.dark-theme .hero-text p {
+    color: rgba(243, 237, 228, 0.85);
+}
+
+/* FEATURES BOX */
+.dark-theme .features div {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--gold-light);
+    border: 1px solid rgba(175, 175, 96, 0.15);
+}
+
+/* CONTACT SECTION */
+.dark-theme .contact {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.85), rgba(10, 9, 7, 0.9)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+/* FOOTER */
+.dark-theme footer {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.9), rgba(10, 9, 7, 0.95)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+}
+
+/* Clickable features on index.html */
+.features a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.features a:hover {
+    transform: translateY(-5px);
+}
+
+.features a:hover div {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 8px 25px rgba(175, 175, 96, 0.15);
+}
 
 /* Services Detail Page Styling */
 .services-detail-section {
