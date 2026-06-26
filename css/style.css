@@ -1718,3 +1718,41 @@ h1, h2, h3, h4, p,
         font-size: 0.8rem !important;
     }
 }
+
+/* Styling for feature links in details sections to prevent blue color */
+.feature-link {
+    text-decoration: none !important;
+    display: block;
+    height: 100%;
+}
+
+.feature-link div {
+    background: #3a2a22 !important;            /* dark chocolate background */
+    color: #ffffff !important;                 /* white text */
+    border: 1px solid rgba(175, 175, 96, 0.4) !important; /* gold border outline */
+    padding: 18px 10px !important;             /* custom padding */
+    border-radius: 8px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease !important;
+}
+
+.feature-link:hover div {
+    background: var(--gold) !important;        /* solid gold on hover */
+    color: #ffffff !important;                 /* white text */
+    border-color: var(--gold) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(175, 175, 96, 0.3) !important;
+}
+
+/* For dark sections, keep background slightly transparent black */
+.event-details.dark .feature-link div {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(175, 175, 96, 0.25) !important;
+}
+
+.event-details.dark .feature-link:hover div {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+}
