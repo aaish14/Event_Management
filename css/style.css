@@ -554,7 +554,7 @@ background-image: url("https://images.unsplash.com/photo-1651313948618-31644c7fe
 .card-image-8 {
     background-image: url("https://admin.hire4event.com/assets/primaryimage/c6269dc4538ff0d03acb5a549997ad39.jpg");
 }
-//new services
+/* new services */
 .services-slider{
     overflow:hidden;
     width:100%;
@@ -896,7 +896,7 @@ html {
 
 
 
--------------------------------------------------------------------------------------------------------------------------------//dark and light theme
+/* dark and light theme */
 /* Theme Toggle Button */
 
 /* =========================
@@ -1286,7 +1286,7 @@ h1, h2, h3, h4, p {
     }
 }
 
-==============================================================================================================================
+/* ============================================================================================================================== */
 
 /* =========================
    LUXURY DARK THEME (FIXED)
