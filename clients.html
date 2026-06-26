@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Our Clients - LuxeEvents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific page layout tweaks */
+        body {
+            padding-top: 100px; /* Offset for fixed navbar */
+        }
+        .clients-hero {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .clients-hero h1 {
+            font-size: 5rem;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+        }
+        .clients-hero p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .dark-theme .clients-hero p {
+            color: var(--gold-light);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <a class="logo" href="index.html">
+            <img src="images/mm-logo.png" alt="Magic Moments Logo">
+            <span>Magic Moments</span>
+        </a>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#events">Events</a></li>
+            <li><a href="clients.html">Clients</a></li>
+            <li><a href="index.html#inquire">Inquire</a></li>
+        </ul>
+        <button id="theme-toggle" type="button">CHANGE THEME</button>
+    </div>
+</nav>
+
+<section class="clients-hero">
+    <div class="container">
+        <h1>OUR CLIENTS</h1>
+        <p>Trusted by leading brands and private hosts across the globe.</p>
+    </div>
+</section>
+
+<section class="clients">
+    <div class="container">
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>175+</h3>
+                <p>Corporate Clients</p>
+            </div>
+            <div class="stat-card">
+                <h3>12+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-card">
+                <h3>1000+</h3>
+                <p>Events Delivered</p>
+            </div>
+            <div class="stat-card">
+                <h3>2M+</h3>
+                <p>Audience Engagement</p>
+            </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="luxury">Luxury & Fashion</button>
+            <button class="filter-btn" data-filter="tech">Technology</button>
+            <button class="filter-btn" data-filter="finance">Finance</button>
+            <button class="filter-btn" data-filter="retail">Lifestyle & Retail</button>
+        </div>
+
+        <!-- Client Grid with Beautiful SVG Logos -->
+        <div class="client-grid">
+            <!-- Client 1: AURA (Luxury) -->
+            <div class="client-card" data-category="luxury">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="24" letter-spacing="6" fill="currentColor">A U R A</text>
+                    <line x1="20" y1="38" x2="100" y2="38" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <!-- Client 2: LUMEN (Tech) -->
+            <div class="client-card" data-category="tech">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="300" font-size="18" letter-spacing="4" fill="currentColor">L U M E N</text>
+                    <circle cx="102" cy="18" r="2" fill="var(--gold)"/>
+                </svg>
+            </div>
+
+            <!-- Client 3: NOVA (Finance) -->
+            <div class="client-card" data-category="finance">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="26" letter-spacing="2" fill="currentColor">Nova</text>
+                </svg>
+            </div>
+
+            <!-- Client 4: VERVE (Retail) -->
+            <div class="client-card" data-category="retail">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="500" font-size="18" letter-spacing="5" fill="currentColor">VERVE</text>
+                </svg>
+            </div>
+
+            <!-- Client 5: VALO (Luxury) -->
+            <div class="client-card" data-category="luxury">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="22" letter-spacing="8" fill="currentColor">VALO</text>
+                </svg>
+            </div>
+
+            <!-- Client 6: APEX (Tech) -->
+            <div class="client-card" data-category="tech">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="300" font-size="19" letter-spacing="3" fill="currentColor">APEX</text>
+                    <path d="M15 35 L25 15 L35 35 Z" stroke="var(--gold)" stroke-width="1.5" fill="none"/>
+                </svg>
+            </div>
+
+            <!-- Client 7: PRISM (Finance) -->
+            <div class="client-card" data-category="finance">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="300" font-size="21" letter-spacing="4" fill="currentColor">P R I S M</text>
+                </svg>
+            </div>
+
+            <!-- Client 8: ECHO (Retail) -->
+            <div class="client-card" data-category="retail">
+                <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="400" font-size="17" letter-spacing="6" fill="currentColor">E C H O</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <h3>Magic moments</h3>
+        <p>Luxury Event Planning & Design</p>
+        <p>© 2026 All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+(function(){
+    // Theme toggle
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const current = localStorage.getItem('theme-mode');
+
+    if (current === 'dark') {
+        body.classList.add('dark-theme');
+    }
+
+    toggle.addEventListener('click', function() {
+        const isDark = body.classList.toggle('dark-theme');
+        localStorage.setItem('theme-mode', isDark ? 'dark' : 'light');
+    });
+
+    // Client Grid Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const clientCards = document.querySelectorAll('.client-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            clientCards.forEach(card => {
+                // Smooth fade effect
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.9) translateY(5px)';
+                
+                setTimeout(() => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                        // Trigger reflow for transition
+                        void card.offsetWidth;
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1) translateY(0)';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            });
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

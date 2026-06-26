@@ -1,0 +1,1583 @@
+:root {
+    --bg: #f8f4ee;
+    --cream: #f3ede4;
+    --gold: #afaf60;
+    --gold-light: #d8c39d;
+    --heading: #afaf60;
+    --text: #ffffff;
+    --white: #ffffff;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--text);
+    line-height:1.8;
+    overflow-x:hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+        ),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed; /* Keeps image visible while scrolling */
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(18,16,14,0.78),
+            rgba(18,16,14,0.72)
+        );
+
+    z-index:-1;
+}
+.statement,
+.about,
+.services,
+.process,
+.events,
+.gallery,
+.packages,
+.testimonials,
+.contact{
+    background:transparent;
+}
+.card,
+.event-card,
+.package-card,
+.testimonial{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+}
+
+.services,
+.process,
+.events,
+.gallery,
+.packages,
+.testimonials,
+.contact,
+.about,
+.statement {
+    padding: var(--space-xl) 8%;
+}
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+/* GOLD DECORATIONS */
+
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* TYPOGRAPHY */
+
+.logo,
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--heading);
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+
+    background:rgba(255, 255, 255, 0.15);
+    backdrop-filter:blur(12px);
+
+    transition:all .4s ease;
+}
+
+.navbar ul li a{
+    color:rgb(255, 255, 255);
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.navbar li {
+    cursor: pointer;
+    color: var(--heading);
+    transition: .3s;
+    /* backdrop-filter: blur(10px); */
+    
+}
+
+.navbar li:hover {
+    color: white;
+    border: 1px ;
+        border-radius: 50px;
+}
+.navbar.scrolled{
+    background:rgba(10,10,10,0.85);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(212,175,55,0.2);
+}
+
+/* HERO */
+
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:transparent;
+}
+.hero-logo img{
+    margin: 0;
+    width:280px;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+.hero-text {
+    width: 100%;
+    text-align: center;
+    background: none;
+    padding: 0 20px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Equal spacing between logo, heading, and subtitle */
+}
+.hero-text h1{
+    margin: 0;
+    font-size:7rem;
+    color:#afaf60;
+    letter-spacing:8px;
+    line-height: 1.15;
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.15),
+        0 8px 30px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+    margin: 0;
+    color: #f5f0ea;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+}
+
+.hero-image {
+    display: none;
+}
+
+/* STATEMENT */
+
+.statement {
+    padding: 130px 10%;
+    text-align: center;
+    background: transparent;
+}
+
+.statement h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 120px 8%;
+    align-items: center;
+    gap: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.image-block {
+    min-height: 600px;
+
+background-image: url("https://images.unsplash.com/photo-1651313948618-31644c7fec18?w=600&auto=format&fit=crop&q=60");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .08);
+}
+
+.about span {
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+.about h2 {
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.about p {
+    font-size: 1.05rem;
+}
+
+/* COMMON SECTIONS */
+
+.services,
+.process,
+.events,
+.gallery,
+.packages,
+.testimonials,
+.contact {
+    padding: 120px 8%;
+}
+
+.services h2,
+.process h2,
+.events h2,
+.gallery h2,
+.packages h2,
+.testimonials h2,
+.contact h2 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+/* CARDS */
+
+.cards,
+.event-grid,
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card,
+.event-card,
+.package-card {
+    background: rgba(255, 255, 255, .75);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(193, 163, 107, .25);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    transition: .4s;
+     text-decoration: none;
+     cursor: pointer;
+}
+
+.card:hover,
+.event-card:hover,
+.package-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, .08);
+}
+
+.card h3,
+.event-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.event-card p {
+    color:#090807
+}
+.event-card p:hover{
+    color: #65321c;
+}
+/* Event Details */
+.event-details {
+    padding: 100px 10%;
+   
+}
+
+.event-details.dark {
+    
+    color: white;
+}
+
+.detail-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-text span {
+    letter-spacing: 3px;
+    color: #9c7255;
+    font-size: 14px;
+}
+
+.event-details.dark span {
+    color: #9c7255;
+}
+
+.detail-text h2 {
+    font-size: 55px;
+    margin: 15px 0;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.detail-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.features div {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+     color: #9c7255;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.event-details.dark .features div {
+    
+  color: #9c7255;
+}
+
+
+/* Images */
+.detail-image {
+    flex: 1;
+    height: 500px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.wedding-img {
+    background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552");
+}
+
+.corporate-img {
+    background-image: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+}
+
+.celebration-img {
+    background-image: url("https://images.unsplash.com/photo-1519671482749-fd09be7ccebf");
+}
+/* Buttons */
+.detail-text button {
+    padding: 15px 35px;
+    background: #3a2a22;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.detail-text button:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media(max-width:900px) {
+
+    .detail-content {
+        flex-direction: column;
+    }
+
+    .detail-text h2 {
+        font-size: 40px;
+    }
+
+    .detail-image {
+        width: 100%;
+        height: 350px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Individual Service Cards */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    border-radius: 20px;
+}
+
+.card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.12));
+    z-index: 2;
+}
+
+.card-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    color: #ffffff;
+}
+
+.card-content h3,
+.card-content p {
+    color: #ffffff;
+}
+
+.card-image-1 {
+    background-image: url("https://www.maritus.in/wp-content/uploads/2019/11/wedding-planners-in-kochi1-e1681795814951.jpg");
+}
+
+.card-image-2 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUgdfzZhbbo9R0j9iadlpOcAY5bnjMfw52zXbvtSIPYDja1dPFweWsC14&s=10");
+}
+
+.card-image-3 {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240703/pngtree-event-management-outdoor-image_15934729.jpg");
+}
+
+.card-image-4 {
+    background-image: url("https://static.wixstatic.com/media/11062b_2cfbd0659929427db0356a439d6be9e6~mv2.jpg/v1/crop/x_739,y_0,w_869,h_1516/fill/w_270,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Colorful%20Music%20Festival.jpg");
+}
+
+.card-image-5 {
+    background-image: url("https://img.magnific.com/premium-photo/lone-model-walks-runway-colorful-gown-with-spotlights-illuminating-stage-cheering-crowd_559896-8006.jpg");
+}
+
+.card-image-6 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8GND3w5VeTo9zvY0ioZyHP4pygplXQU8Xjn1Eny9JHw&s=10");
+}
+
+.card-image-7 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZSLpTu1riHCqfL8AAzbL_fnV7_onu9HuqIzEjWwFjg&s=10");
+}
+
+.card-image-8 {
+    background-image: url("https://admin.hire4event.com/assets/primaryimage/c6269dc4538ff0d03acb5a549997ad39.jpg");
+}
+//new services
+.services-slider{
+    overflow:hidden;
+    width:100%;
+}
+
+.services-track{
+    display:flex;
+    gap:30px;
+    width:max-content;
+    animation:slideLeft 25s linear infinite;
+}
+
+.service-slide{
+    width:350px; /* Similar width to your existing cards */
+    flex-shrink:0;
+
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(193,163,107,.25);
+
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+}
+
+.service-slide img{
+    width:100%;
+    height:300px; /* Same as .card-image */
+    object-fit:cover;
+}
+
+.service-content{
+    padding:50px 40px; /* Same as .card-content */
+    text-align:center;
+}
+
+.service-content h3{
+    font-size:2rem;
+}
+
+@keyframes slideLeft{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-item {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+/* Individual Images */
+
+.gallery-1 {
+    background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1000&q=90&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-2 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8CX3sUC6w2I2IRgOIVR4ryggrXboA9KR_clFAa3WY4fg_T5Fn1vxlcR2&s=10");
+}
+
+.gallery-3 {
+    background-image: url("https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZXZlbnQlMjBwbGFubmluZ3xlbnwwfHwwfHx8MA%3D%3D");
+}
+
+.gallery-4 {
+    background-image: url("https://www.theweddingschool.in/wp-content/uploads/2025/08/Exploring-Event-Decoration-Courses-in-India-Skills-Youll-Master-by-2025-2.png");
+}
+
+.gallery-5 {
+    background-image: url("https://content.jdmagicbox.com/quickquotes/images_main/microfibre-triangle-blue-wedding-light-802934846-h172g4ht.jpg?impolicy=queryparam&im=Resize=(360,360),aspect=fit");
+}
+
+.gallery-6 {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVWa9W-2FFiMFFqy97zdpOfhIgfauVA3BTHJcUJNzVue0oxmFEkK86Bn8&s=10");
+}
+
+/* PACKAGES */
+
+.package-card h3 {
+    font-size: 2.5rem;
+}
+
+.package-card h4 {
+    font-size: 3rem;
+    margin: 25px 0;
+    color: var(--gold);
+}
+
+.package-card ul {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.package-card li {
+    margin: 15px 0;
+}
+
+.featured {
+    border: 2px solid var(--gold);
+
+    background:
+        linear-gradient(135deg,
+            rgba(193, 163, 107, .12),
+            rgba(255, 255, 255, .95));
+
+    transform: scale(1.05);
+}
+
+/* PROCESS */
+
+.process ol {
+    max-width: 700px;
+    margin: auto;
+}
+
+.process li {
+    margin: 25px 0;
+    font-size: 1.1rem;
+}
+
+/* TESTIMONIALS */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, .75);
+
+    border: 1px solid rgba(193, 163, 107, .25);
+
+    padding: 50px;
+
+    font-style: italic;
+}
+
+/* CONTACT */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+      background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+        ),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed; /* Keeps image visible while scrolling */
+
+    backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(193, 163, 107, .2);
+    border-bottom: 1px solid rgba(193, 163, 107, .2);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--gold-light);
+    padding: 15px 0;
+    outline: none;
+    font-size: 15px;
+}
+
+button {
+    width: max-content;
+
+    padding: 14px 40px;
+
+    border: 1px solid var(--gold);
+
+    background: transparent;
+
+    color: var(--gold);
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+button:hover {
+    background: var(--gold);
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 80px 20px;
+
+   
+
+    border-top: 1px solid rgba(193, 163, 107, .2);
+      background:
+        linear-gradient(
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.65)
+        ),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed; /* Keeps image visible while scrolling */
+}
+
+footer h3 {
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px) {
+
+    .cards,
+    .event-grid,
+    .package-grid,
+    .testimonial-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+
+    .about h2,
+    .services h2,
+    .events h2,
+    .gallery h2,
+    .packages h2,
+    .testimonials h2,
+    .contact h2 {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    .navbar ul {
+        gap: 15px;
+        font-size: .85rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .statement h2 {
+        font-size: 2rem;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.navbar {
+    padding: 22px 0;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease;
+}
+
+
+.navbar ul li a:hover {
+    color: white;
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------//dark and light theme
+/* Theme Toggle Button */
+
+/* =========================
+   LUXURY DARK THEME (FIXED)
+   Matches your gold + cream palette
+========================= */
+
+.dark-theme {
+    --bg: #0f0d0b;              /* deep luxury black-brown */
+    --cream: #1a1612;
+    --card-bg: rgba(255, 255, 255, 0.06);
+
+    --heading: #f3ede4;         /* soft cream heading */
+    --text: rgba(255, 255, 255, 0.85);
+
+    --gold: #afaf60;            /* your original gold */
+    --gold-light: #d8c39d;
+    --white: #ffffff;
+}
+
+/* Apply base background */
+.dark-theme body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+.dark-theme .navbar {
+    background: rgba(10, 9, 7, 0.75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(175, 175, 96, 0.2);
+}
+
+.dark-theme .navbar ul li a {
+    color: var(--text);
+}
+
+.dark-theme .navbar ul li a:hover {
+    color: var(--gold);
+}
+
+/* HEADINGS */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme .logo {
+    color: var(--heading);
+}
+
+/* CARDS */
+.dark-theme .card,
+.dark-theme .event-card,
+.dark-theme .package-card,
+.dark-theme .testimonial {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(175, 175, 96, 0.18);
+}
+
+/* BUTTONS */
+.dark-theme button {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.dark-theme button:hover {
+    background: var(--gold);
+    color: #0f0d0b;
+}
+
+/* HERO TEXT */
+.dark-theme .hero-text h1 {
+    color: var(--gold);
+}
+
+.dark-theme .hero-text p {
+    color: rgba(243, 237, 228, 0.85);
+}
+
+/* FEATURES BOX */
+.dark-theme .features div {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--gold-light);
+    border: 1px solid rgba(175, 175, 96, 0.15);
+}
+
+/* CONTACT SECTION */
+.dark-theme .contact {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.85), rgba(10, 9, 7, 0.9)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+/* FOOTER */
+.dark-theme footer {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.9), rgba(10, 9, 7, 0.95)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+}
+
+/* SMOOTH TRANSITION */
+body,
+.navbar,
+.card,
+.event-card,
+.package-card,
+.testimonial,
+button,
+h1, h2, h3, h4, p {
+    transition: all 0.4s ease;
+}
+
+/* ============================================================
+   CLIENT STYLES - IMPORTED FROM client.css
+   ============================================================ */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.clients-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg,
+            #0f0f0f,
+            #1b1b1b);
+}
+
+.clients-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.clients-hero p {
+    color: #bdbdbd;
+    font-size: 1.1rem;
+}
+
+.stats {
+    padding: 80px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.stat-card {
+    background: #101010;
+    border: 1px solid #222;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.stat-card h2 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: #aaa;
+}
+
+.clients-section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+/* CLIENTS SECTION */
+.clients {
+    padding: 120px 8%;
+    text-align: center;
+}
+
+.clients h2 {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.clients span {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+.clients-subtitle {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.8;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(193, 163, 107, 0.25);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.stat-card p {
+    color: #333;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Filter buttons */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: transparent;
+    color: #333;
+    border: 1px solid #c1a36b;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+}
+
+/* Client Logo Grid */
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.client-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(193, 163, 107, 0.25);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.client-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.client-card svg {
+    color: #333;
+    transition: all 0.4s ease;
+}
+
+.client-card:hover svg {
+    color: var(--gold);
+    transform: scale(1.05);
+}
+
+/* Dark Theme overrides for Clients Section */
+.dark-theme .clients-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .stat-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(175, 175, 96, 0.18);
+}
+
+.dark-theme .stat-card h3 {
+    color: var(--gold);
+}
+
+.dark-theme .stat-card p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .filter-btn {
+    color: var(--text);
+    border-color: rgba(175, 175, 96, 0.4);
+}
+
+.dark-theme .filter-btn:hover,
+.dark-theme .filter-btn.active {
+    background: var(--gold);
+    color: #0f0d0b;
+    border-color: var(--gold);
+}
+
+.dark-theme .client-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(175, 175, 96, 0.18);
+}
+
+.dark-theme .client-card svg {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .client-card:hover svg {
+    color: var(--gold);
+}
+
+/* Responsive adjustments */
+@media(max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .client-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .client-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+==============================================================================================================================
+
+/* =========================
+   LUXURY DARK THEME (FIXED)
+   Matches your gold + cream palette
+========================= */
+
+.dark-theme {
+    --bg: #0f0d0b;              /* deep luxury black-brown */
+    --cream: #1a1612;
+    --card-bg: rgba(255, 255, 255, 0.06);
+
+    --heading: #f3ede4;         /* soft cream heading */
+    --text: rgba(255, 255, 255, 0.85);
+
+    --gold: #afaf60;            /* your original gold */
+    --gold-light: #d8c39d;
+    --white: #ffffff;
+}
+
+/* Apply base background */
+.dark-theme body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+.dark-theme .navbar {
+    background: rgba(10, 9, 7, 0.75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(175, 175, 96, 0.2);
+}
+
+.dark-theme .navbar ul li a {
+    color: var(--text);
+}
+
+.dark-theme .navbar ul li a:hover {
+    color: var(--gold);
+}
+
+/* HEADINGS */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme .logo {
+    color: var(--heading);
+}
+
+/* CARDS */
+.dark-theme .card,
+.dark-theme .event-card,
+.dark-theme .package-card,
+.dark-theme .testimonial {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(175, 175, 96, 0.18);
+}
+
+/* BUTTONS */
+.dark-theme button {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.dark-theme button:hover {
+    background: var(--gold);
+    color: #0f0d0b;
+}
+
+/* HERO TEXT */
+.dark-theme .hero-text h1 {
+    color: var(--gold);
+}
+
+.dark-theme .hero-text p {
+    color: rgba(243, 237, 228, 0.85);
+}
+
+/* FEATURES BOX */
+.dark-theme .features div {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--gold-light);
+    border: 1px solid rgba(175, 175, 96, 0.15);
+}
+
+/* CONTACT SECTION */
+.dark-theme .contact {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.85), rgba(10, 9, 7, 0.9)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+/* FOOTER */
+.dark-theme footer {
+    background:
+        linear-gradient(rgba(10, 9, 7, 0.9), rgba(10, 9, 7, 0.95)),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+}
+
+/* Clickable features on index.html */
+.features a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.features a:hover {
+    transform: translateY(-5px);
+}
+
+.features a:hover div {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 8px 25px rgba(175, 175, 96, 0.15);
+}
+
+/* Services Detail Page Styling */
+.services-detail-section {
+    padding: 60px 8% 120px;
+}
+
+.services-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.detail-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(193, 163, 107, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.detail-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.detail-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.detail-card:hover .detail-card-image {
+    transform: scale(1.05);
+}
+
+.rating-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(18, 16, 14, 0.85);
+    color: var(--gold);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 1px solid rgba(175, 175, 96, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.detail-card-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.detail-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.detail-card-desc {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.detail-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(193, 163, 107, 0.15);
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.card-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.detail-card-btn {
+    padding: 10px 22px;
+    background: #3a2a22;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.detail-card-btn:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Dark theme overrides for services detail */
+.dark-theme .detail-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(175, 175, 96, 0.18);
+}
+
+.dark-theme .detail-card-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .card-price {
+    color: var(--gold-light);
+}
+
+.dark-theme .detail-card-footer {
+    border-top-color: rgba(175, 175, 96, 0.15);
+}
+
+.dark-theme .detail-card-btn {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+}
+
+.dark-theme .detail-card-btn:hover {
+    background: var(--gold);
+    color: #0f0d0b;
+}
+
+.dark-theme .event-card p {
+    color: var(--text);
+}
+
+.dark-theme .event-card p:hover {
+    color: var(--gold-light);
+}
+
+/* SMOOTH TRANSITION */
+body,
+.navbar,
+.card,
+.event-card,
+.package-card,
+.testimonial,
+button,
+h1, h2, h3, h4, p,
+.detail-card,
+.detail-card-image,
+.detail-card-btn,
+.features div {
+    transition: all 0.4s ease;
+}
