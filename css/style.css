@@ -1614,3 +1614,107 @@ h1, h2, h3, h4, p,
 .features div {
     transition: all 0.4s ease;
 }
+
+/* Services Slider Card default sizes */
+.services-track .card {
+    width: 320px !important;
+    flex-shrink: 0 !important;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVENESS PATCH FOR NARROW SCREENS (< 576px)
+   ============================================================ */
+@media (max-width: 576px) {
+    /* Navbar branding adjust */
+    .logo {
+        font-size: 1.3rem !important;
+        letter-spacing: 1px !important;
+    }
+    .logo img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .logo span {
+        font-size: 1.3rem !important;
+    }
+
+    /* Headings and Hero text */
+    h1 {
+        font-size: 2.2rem !important;
+        letter-spacing: 4px !important;
+    }
+    h2, 
+    .about h2, 
+    .services h2, 
+    .events h2, 
+    .gallery h2, 
+    .packages h2, 
+    .testimonials h2, 
+    .contact h2 {
+        font-size: 2.0rem !important;
+        margin-bottom: 25px !important;
+    }
+    .hero-text p {
+        font-size: 0.95rem !important;
+        letter-spacing: 2px !important;
+    }
+    .hero-logo img {
+        width: 180px !important;
+    }
+
+    /* Section Padding adjustments */
+    .services, 
+    .process, 
+    .events, 
+    .gallery, 
+    .packages, 
+    .testimonials, 
+    .contact, 
+    .about, 
+    .statement {
+        padding: 50px 6% !important;
+    }
+
+    /* Block spacings */
+    .image-block {
+        min-height: 250px !important;
+    }
+    .detail-image {
+        height: 250px !important;
+    }
+    .detail-text h2 {
+        font-size: 32px !important;
+    }
+
+    /* Services Slider Card width control */
+    .services-track .card {
+        width: 270px !important;
+        min-height: 380px !important;
+        padding: 30px 20px !important;
+    }
+    .services-track .card h3 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Features boxes adjustments */
+    .features div {
+        padding: 10px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Testimonials padding */
+    .testimonial {
+        padding: 30px !important;
+    }
+
+    /* Stats adjustments on clients page */
+    .stat-card {
+        padding: 25px 15px !important;
+    }
+    .stat-card h3 {
+        font-size: 2rem !important;
+    }
+    .stat-card p {
+        font-size: 0.8rem !important;
+    }
+}
